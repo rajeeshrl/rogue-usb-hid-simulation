@@ -1,20 +1,25 @@
 # 🔌 Rogue USB HID Attack (Simulation)
 
+![Project Type](https://img.shields.io/badge/Type-Simulation-blue)
+
+---
+
 ## 📌 Overview
 
-This project demonstrates a **simulated Rogue USB attack** using a Digispark-style HID payload.
+This project simulates a **HID-based Rogue USB attack** where a malicious USB device emulates a keyboard to inject keystrokes and execute commands on a target system.
 
-The goal is to understand how malicious USB devices can emulate a keyboard and inject keystrokes to execute commands on a target system.
+The goal of this project is to understand how HID devices can bypass traditional security controls by exploiting the inherent trust systems place in keyboard inputs.
 
-> ⚠️ This is a **simulation-based project** focused on learning and understanding attack behavior.
+> ⚠️ This is a simulation-based project focused on understanding attack techniques and defensive strategies.
 
 ---
 
 ## ⚙️ How It Works
 
-- The USB device acts as a **Human Interface Device (HID)**
-- The system recognizes it as a keyboard
-- Predefined keystrokes are automatically executed
+- The USB device is identified as a **Human Interface Device (HID)**
+- The operating system automatically trusts HID input
+- Predefined keystrokes are injected into the system
+- Commands are executed without requiring user interaction
 
 ---
 
@@ -23,7 +28,7 @@ The goal is to understand how malicious USB devices can emulate a keyboard and i
 ```cpp
 DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
 ```
-➡ Opens Run dialog (Windows + R)
+➡ Opens the Run dialog (Windows + R)
 
 ```cpp
 DigiKeyboard.println("cmd");
@@ -33,16 +38,16 @@ DigiKeyboard.println("cmd");
 ```cpp
 DigiKeyboard.println("whoami");
 ```
-➡ Executes system command
+➡ Executes a system command to display the current user
 
 ---
 
 ## 🧪 Simulated Execution
 
-Since this project is implemented without physical hardware:
+Since this project was developed without physical hardware, execution was simulated manually.
 
-- Commands were executed manually in CMD
-- Output represents expected payload behavior
+- Commands were executed in Command Prompt
+- Output represents the expected behavior of the payload
 
 📸 See: `screenshots/demo.png`
 
@@ -62,42 +67,55 @@ Command Executed
 
 ---
 
-## 🎯 Key Concepts Learned
+## 🧠 Real-World Relevance
 
-- HID-based attacks
-- Keystroke injection
-- Command execution flow
-- Trust model of USB devices
+HID-based USB attacks are particularly effective because they bypass traditional security mechanisms. Since the device behaves like a trusted keyboard, most systems do not restrict or inspect its input.
+
+This technique is relevant in:
+- Insider threat scenarios
+- Social engineering attacks (e.g., malicious USB drop)
+- Physical access exploitation
+
+---
+
+## 🛠️ Skills Demonstrated
+
+- Understanding of HID-based attack techniques  
+- Keystroke injection logic  
+- Command execution flow analysis  
+- Basic threat modeling  
+- Security mitigation strategies  
 
 ---
 
 ## 🛡️ Mitigation Strategies
 
-- Disable unauthorized USB devices
-- Implement endpoint detection & response (EDR)
-- Restrict HID device access via group policies
-- Monitor unusual command execution
+- Disable or restrict unauthorized USB devices  
+- Enforce HID device control using group policies  
+- Implement Endpoint Detection & Response (EDR) solutions  
+- Monitor abnormal command execution patterns  
 
 ---
 
 ## 📚 MITRE ATT&CK Mapping
 
-- T1059 – Command Execution
-- T1204 – User Execution
+- **T1059** – Command and Scripting Interpreter  
+- **T1204** – User Execution  
 
 ---
 
 ## 🚀 Future Improvements
 
-- Deploy on Digispark hardware
-- Create advanced payloads (PowerShell, reverse shell)
-- Add real-world demo video
+- Deploy the payload on Digispark hardware  
+- Develop advanced payloads (PowerShell, reverse shell)  
+- Record a real-world demonstration  
+- Integrate detection techniques from a SOC perspective  
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project is for **educational purposes only**.  
+This project is intended for **educational purposes only**.  
 Do not use these techniques on systems without proper authorization.
 
 ---
@@ -110,3 +128,5 @@ Cybersecurity Enthusiast | SOC Analyst Aspirant
 - 🔗 GitHub: https://github.com/rajeeshrl  
 - 📧 Email: rajeesh8214@gmail.com  
 - 💼 LinkedIn: https://linkedin.com/in/rajeeshrl-
+
+---
