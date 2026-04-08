@@ -104,5 +104,5 @@ Do not use these techniques on systems without proper authorization.
 
 ## 👨‍💻 Author
 
-Your Name  
+RAJEESH R L 
 Cybersecurity Enthusiast | SOC Analyst Aspirant
